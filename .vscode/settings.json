@@ -1,0 +1,14 @@
+{
+  // Color scheme and navigations
+  "workbench.sideBar.location": "left",
+  "workbench.colorTheme": "Night Owl",
+  // Display settings
+  "workbench.editor.showTabs": true,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "window.zoomLevel": -0.5,
+  "editor.fontSize": 12,
+  // Vim extension settings
+  "vim.useSystemClipboard": true,
+}
+

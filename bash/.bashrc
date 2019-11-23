@@ -9,14 +9,14 @@ alias ll="ls -arlthG"
 alias ls='ls -tG'
 alias rm='rm -i'
 
-# Git alias for local
+# Git bash-completion and alias
+source /usr/local/etc/bash_completion.d/git-completion.bash
 alias g='git'
 alias gs='git status'
 alias ga='git add'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gcm='git commit -m'
-alias gco='git checkout'
 alias gb='git branch -a -vv'
 alias gr='git remote -v'
 alias gg='git graph'

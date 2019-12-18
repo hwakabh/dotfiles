@@ -8,6 +8,7 @@ stty stop undef
 alias ll="ls -arlthG"
 alias ls='ls -tG'
 alias rm='rm -i'
+alias cls='clear'
 
 # Git bash-completion and alias
 source /usr/local/etc/bash_completion.d/git-completion.bash

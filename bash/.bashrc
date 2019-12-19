@@ -23,6 +23,9 @@ alias gr='git remote -v'
 alias gg='git graph'
 alias gf='git fetch -p'
 
+# VSCode CLI
+export PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
+
 # PowerShell Core for MacOS
 alias powershell='pwsh'
 

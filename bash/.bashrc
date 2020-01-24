@@ -11,6 +11,8 @@ alias rm='rm -i'
 alias cls='clear'
 
 # Git bash-completion and alias
+# -- Overwrite PATH instead of apple-git
+export PATH="/usr/local/git/bin:$PATH"
 source /usr/local/etc/bash_completion.d/git-completion.bash
 alias g='git'
 alias gs='git status'

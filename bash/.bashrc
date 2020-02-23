@@ -25,6 +25,11 @@ alias gr='git remote -v'
 alias gg='git graph'
 alias gf='git fetch -p'
 
+# gcloud-sdk completions and alias
+if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk/path.bash.inc"; fi
+if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-cloud-sdk/completion.bash.inc"; fi
+alias gcp='gcloud'
+
 # VSCode CLI
 export PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
 
@@ -41,10 +46,6 @@ eval "$(pyenv init -)"
 
 # kubectl bash completion
 source <(kubectl completion bash)
-
-# gcloud-sdk
-if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk/path.bash.inc"; fi
-if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-cloud-sdk/completion.bash.inc"; fi
 
 # heroku autocomplete setup
 HEROKU_AC_BASH_SETUP_PATH=$HOME/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;

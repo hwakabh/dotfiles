@@ -7,7 +7,7 @@
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
   "window.zoomLevel": -0.5,
-  "editor.fontSize": 12,
+  "editor.fontSize": 13,
   // Vim extension settings
   "vim.useSystemClipboard": true,
   // Terminal Settings

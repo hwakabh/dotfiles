@@ -12,5 +12,6 @@
   "vim.useSystemClipboard": true,
   // Terminal Settings
   "terminal.integrated.fontSize": 13,
+  "terminal.integrated.scrollback": 9999,
 }
 

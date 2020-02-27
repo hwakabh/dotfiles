@@ -1,2 +1,3 @@
 # dotfiles
-Personal Configuration files
+
+Personal Configuration files for setting up.

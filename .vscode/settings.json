@@ -10,5 +10,7 @@
   "editor.fontSize": 12,
   // Vim extension settings
   "vim.useSystemClipboard": true,
+  // Terminal Settings
+  "terminal.integrated.fontSize": 13,
 }
 

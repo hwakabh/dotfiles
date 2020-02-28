@@ -2,15 +2,21 @@
   // Color scheme and navigations
   "workbench.sideBar.location": "left",
   "workbench.colorTheme": "Night Owl",
+
+  // Editor settings
+  "editor.minimap.enabled": false,
+  "editor.fontSize": 13,
+  "editor.detectIndentation": false,
+
   // Display settings
   "workbench.editor.showTabs": true,
-  "editor.minimap.enabled": false,
   "breadcrumbs.enabled": false,
   "window.zoomLevel": -0.5,
-  "editor.fontSize": 13,
+
   // Vim extension settings
   "vim.useSystemClipboard": true,
-  // Terminal Settings
+
+  // Terminal settings
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.scrollback": 9999,
 }

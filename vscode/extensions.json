@@ -1,0 +1,16 @@
+{
+    "recommendations": [
+        // Accessibilities
+        "vscodevim.vim",
+        "tomoki1207.pdf",
+        // Themes
+        "sdras.night-owl",
+        // Developments
+        "davidanson.vscode-markdownlint",
+        "jbenden.c-cpp-flylint",
+        "donjayamanne.githistory",
+        "eamodio.gitlens",
+        // Debuggers
+        "ms-python.python"
+    ]
+}

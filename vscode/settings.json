@@ -20,5 +20,5 @@
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
   // Vim extension settings
-  "vim.useSystemClipboard": true,
+  "vim.useSystemClipboard": true
 }

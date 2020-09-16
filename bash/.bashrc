@@ -37,7 +37,7 @@ export PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/
 alias powershell='pwsh'
 
 # nodebrew Settings
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 # pyenv Settings
 export PYENV_ROOT="$HOME/.pyenv"
@@ -45,7 +45,8 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 # kubectl bash completion
-source <(kubectl completion bash)
+# : Since $(bash --version) <= 3, include for legacy shell
+source /dev/stdin <<<"$(kubectl completion bash)"
 
 # heroku autocomplete setup
 HEROKU_AC_BASH_SETUP_PATH=$HOME/Library/Caches/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;

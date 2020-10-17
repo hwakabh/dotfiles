@@ -1,9 +1,6 @@
 # Prompt Settings
 export PS1="\[\e[1;32m\]>_ \\W \\t \\$ \[\e[m\]"
 
-# Unmap stty keybind to enable i-Search
-stty stop undef
-
 # General alias
 alias ll="ls -arlthG"
 alias ls='ls -tG'
@@ -45,4 +42,3 @@ export PATH="$HOME/.nodebrew/current/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-

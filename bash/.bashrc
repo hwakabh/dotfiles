@@ -1,5 +1,5 @@
 # Prompt Settings
-export PS1="\[\e[1;32m\]>_ \\W \\t \\$ \[\e[m\]"
+export PS1="\[\e[1;32m\][\\d \\t] \\W % \[\e[m\]"
 
 # Suppress zsh warnings
 export BASH_SILENCE_DEPRECATION_WARNING=1

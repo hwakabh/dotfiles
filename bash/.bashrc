@@ -1,6 +1,9 @@
 # Prompt Settings
 export PS1="\[\e[1;32m\]>_ \\W \\t \\$ \[\e[m\]"
 
+# Suppress zsh warnings
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # General alias
 alias ll="ls -arlthG"
 alias ls='ls -tG'

@@ -20,8 +20,11 @@ if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-clo
 
 # Git
 # >>> Overwrite PATH instead of apple-git (/usr/bin/git)
-export PATH="/usr/local/bin/git:$PATH"
-source /usr/local/etc/bash_completion.d/git-completion.bash
+if [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
+  export PATH="/usr/local/bin/git:$PATH"
+  source /usr/local/etc/bash_completion.d/git-completion.bash
+fi
+# >>> Alias for git
 alias g='git'
 alias gs='git status'
 alias ga='git add'

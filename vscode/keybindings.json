@@ -10,5 +10,9 @@
         "key": "cmd+;",
         "command": "workbench.action.focusFirstEditorGroup",
         "when": "terminalFocus"
+    },
+    {
+        "key": "cmd+r",
+        "command": "editor.action.startFindReplaceAction"
     }
 ]

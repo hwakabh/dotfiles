@@ -1,5 +1,5 @@
 # Prompt Settings
-export PS1="\[\e[1;32m\][ $(date +%Y/%m/%d_%H:%M:%S) ] \\W % \[\e[m\]"
+export PS1="\[\e[1;32m\]\u@\h \\W % \[\e[m\]"
 
 # Suppress zsh warnings
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -11,7 +11,6 @@ alias rm='rm -i'
 alias cls='clear'
 
 # include bash-completion files
-source $(brew --prefix)/etc/profile.d/bash_completion.sh
 if [ -f "$(brew --prefix)/etc/bash_completion.d/" ]; then . "$(brew --prefix)/etc/bash_completion.d/*"; fi
 
 # gcloud-sdk completions and alias

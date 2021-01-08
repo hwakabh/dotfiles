@@ -1,0 +1,6 @@
+# OS dependencies
+.DS_Store
+
+# For IDEs
+.vscode/*
+*.code-workspace

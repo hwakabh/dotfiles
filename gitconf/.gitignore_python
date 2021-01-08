@@ -1,6 +1,2 @@
-.DS_Store
-.vscode/*
-*.code-workspace
-.idea/*
 venv/*
 *.pyc

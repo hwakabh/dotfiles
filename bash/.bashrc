@@ -1,7 +1,7 @@
 # Prompt Settings
 export PS1="\[\e[0;36m\]\D{%Y/%m/%d_%H:%M:%S} \\W % \[\e[m\]"
 
-# Suppress zsh warnings
+# Suppress zsh warning
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # General alias
@@ -10,20 +10,8 @@ alias ls='ls -tG'
 alias rm='rm -i'
 alias cls='clear'
 
-# include bash-completion files
-if [ -f "$(brew --prefix)/etc/bash_completion.d/" ]; then . "$(brew --prefix)/etc/bash_completion.d/*"; fi
-
-# gcloud-sdk completions and alias
-if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk/path.bash.inc"; fi
-if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-cloud-sdk/completion.bash.inc"; fi
-
 # Git
-# >>> Overwrite PATH instead of apple-git (/usr/bin/git)
-if [ -f "/usr/local/etc/bash_completion.d/git-completion.bash" ]; then
-  export PATH="/usr/local/bin/git:$PATH"
-  source /usr/local/etc/bash_completion.d/git-completion.bash
-fi
-# >>> Alias for git
+export PATH="/usr/local/bin/git:$PATH"
 alias g='git'
 alias gs='git status'
 alias ga='git add'
@@ -34,9 +22,13 @@ alias gb='git branch -a -vv'
 alias gr='git remote -v'
 alias gg='git graph'
 alias gf='git fetch -p'
+if [ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.bash" ]; then
+    source /usr/local/etc/bash_completion.d/git-completion.bash
+fi
 
 # VSCode CLI
 export PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
+
 # PowerShell Core for MacOS
 alias powershell='pwsh'
 
@@ -47,3 +39,39 @@ export PATH="$HOME/.nodebrew/current/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# MySQL Client
+export PATH="$(brew --prefix)/opt/mysql-client/bin:$PATH"
+
+# Google Cloud SDK
+if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then
+   source "$HOME/google-cloud-sdk/path.bash.inc"
+fi
+if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then
+   source "$HOME/google-cloud-sdk/completion.bash.inc"
+fi
+
+# heroku autocomplete setup
+HEROKU_AC_BASH_SETUP_PATH="$HOME/Library/Caches/heroku/autocomplete/bash_setup"
+test -f $HEROKU_AC_BASH_SETUP_PATH
+source $HEROKU_AC_BASH_SETUP_PATH
+
+# kubectl
+if [ -f "$(brew --prefix)/etc/bash_completion.d/kubectl" ]; then
+    source "$(brew --prefix)/etc/bash_completion.d/kubectl"
+fi
+
+# velero
+if [ -f "$(brew --prefix)/etc/bash_completion.d/velero" ]; then
+    source "$(brew --prefix)/etc/bash_completion.d/velero"
+fi
+
+# MinIO
+if [ -f "$(brew --prefix)/bin/mc" ]; then
+    complete -C $(brew --prefix)/bin/mc mc
+fi
+
+# Restic (/w restic generate --bash-completion $(brew --prefix)/etc/bash_completion.d/restic)
+if [ -f "$(brew --prefix)/etc/bash_completion.d/restic" ]; then
+    source "$(brew --prefix)/etc/bash_completion.d/restic"
+fi

@@ -4,12 +4,15 @@
   // Color scheme and navigations
   "workbench.sideBar.location": "left",
   "workbench.colorTheme": "Night Owl",
+  "workbench.iconTheme": "vscode-icons",
   // Editor
-  "editor.fontFamily": "Courier, Menlo",
+  "editor.fontFamily": "Menlo, monospace",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": false,
+  "editor.fontWeight": "normal",
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.minimap.enabled": false,
-  "editor.fontLigatures": false,
   "breadcrumbs.enabled": false,
   "workbench.editor.showTabs": true,
   // Terminal Config
@@ -19,17 +22,14 @@
   // --- Extension specific
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
-  "vim.useSystemClipboard": true,
   "git.autofetch": true,
-  "window.zoomLevel": 0,
+  "vim.useSystemClipboard": true,
   "c-cpp-flylint.flexelint.enable": false,
-  "C_Cpp.updateChannel": "Insiders",
   "extensions.ignoreRecommendations": true,
   "workbench.editorAssociations": [
     {
       "viewType": "jupyter-notebook",
       "filenamePattern": "*.ipynb"
     }
-  ],
-  "workbench.iconTheme": "vscode-icons"
+  ]
 }

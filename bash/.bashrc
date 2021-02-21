@@ -5,12 +5,13 @@ export PS1="\[\e[0;36m\]\D{%Y/%m/%d_%H:%M:%S} \\W % \[\e[m\]"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # General alias
-alias ll="ls -arlthG"
-alias ls='ls -tG'
+alias l="ls -hGF"
+alias ll="ls -arlthGF"
+alias ls='ls -tGF'
 alias rm='rm -i'
 alias cls='clear'
 
-# Git
+# Git & GitHub CLI
 export PATH="/usr/local/bin/git:$PATH"
 alias g='git'
 alias gs='git status'
@@ -21,9 +22,12 @@ alias gcm='git commit -m'
 alias gb='git branch -a -vv'
 alias gr='git remote -v'
 alias gg='git graph'
-alias gf='git fetch -p'
+alias gf='git fetch --prune'
 if [ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.bash" ]; then
-    source /usr/local/etc/bash_completion.d/git-completion.bash
+    source "$(brew --prefix)/etc/bash_completion.d/git-completion.bash"
+fi
+if [ -f "$(brew --prefix)/etc/bash_completion.d/gh" ]; then
+    source "$(brew --prefix)/etc/bash_completion.d/gh"
 fi
 
 # VSCode CLI
@@ -32,8 +36,11 @@ export PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/
 # PowerShell Core for MacOS
 alias powershell='pwsh'
 
-# nodebrew Settings
+# Node.js (nodebrew & npm)
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
+if [ -f "$(brew --prefix)/etc/bash_completion.d/npm" ]; then
+    source "$(brew --prefix)/etc/bash_completion.d/npm"
+fi
 
 # pyenv Settings
 export PYENV_ROOT="$HOME/.pyenv"

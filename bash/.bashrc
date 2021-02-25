@@ -68,6 +68,11 @@ if [ -f "$(brew --prefix)/etc/bash_completion.d/kubectl" ]; then
     source "$(brew --prefix)/etc/bash_completion.d/kubectl"
 fi
 
+# Kubernetes
+if [ -f "$(brew --prefix)/etc/bash_completion.d/kubectl" ]; then
+    source "$(brew --prefix)/etc/bash_completion.d/kubectl"
+fi
+
 # velero
 if [ -f "$(brew --prefix)/etc/bash_completion.d/velero" ]; then
     source "$(brew --prefix)/etc/bash_completion.d/velero"

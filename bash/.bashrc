@@ -50,7 +50,7 @@ eval "$(pyenv init -)"
 # MySQL Client
 export PATH="$(brew --prefix)/opt/mysql-client/bin:$PATH"
 
-# Google Cloud SDK
+# google-cloud-sdk
 if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then
    source "$HOME/google-cloud-sdk/path.bash.inc"
 fi
@@ -58,10 +58,19 @@ if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then
    source "$HOME/google-cloud-sdk/completion.bash.inc"
 fi
 
+# azure-cli
+if [ -f "$(brew --prefix)/etc/bash_completion.d/az" ]; then
+  source "$(brew --prefix)/etc/bash_completion.d/az"
+fi
+
+# aws-cli
+if [ -f "$(brew --prefix)bin/aws_completer" ]; then
+  complete -C "$(brew --prefix)/bin/aws_completer" aws
+fi
+
 # heroku autocomplete setup
 HEROKU_AC_BASH_SETUP_PATH="$HOME/Library/Caches/heroku/autocomplete/bash_setup"
-test -f $HEROKU_AC_BASH_SETUP_PATH
-source $HEROKU_AC_BASH_SETUP_PATH
+test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH
 
 # kubectl
 if [ -f "$(brew --prefix)/etc/bash_completion.d/kubectl" ]; then

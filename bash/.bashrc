@@ -61,7 +61,7 @@ export PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/
 alias powershell='pwsh'
 
 # Node.js (nodenv & npm completion)
-export PATH="$HOME/.ndenv/bin:$PATH"
+export PATH="$HOME/.nodenv/bin:$PATH"
 if [ -f "$(brew --prefix)/bin/nodenv" ]; then
   eval "$(nodenv init -)"
 fi

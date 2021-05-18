@@ -1,35 +1,39 @@
-// User global settings for vscode:
-// $HOME/Library/Application Support/Code - Insiders/User/settings.json
 {
   // Color scheme and navigations
   "workbench.sideBar.location": "left",
-  "workbench.colorTheme": "Night Owl",
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "GitHub Light",
   // Editor
-  "editor.fontFamily": "Menlo, monospace",
-  "editor.fontSize": 13,
-  "editor.fontLigatures": false,
-  "editor.fontWeight": "normal",
+  "editor.fontFamily": "SF Mono Square, Menlo",
+  "editor.fontSize": 16,
+  "markdown.preview.fontFamily": "SF Mono Square, Menlo",
+  "markdown.preview.fontSize": 16,
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.minimap.enabled": false,
+  "editor.fontLigatures": false,
   "breadcrumbs.enabled": false,
   "workbench.editor.showTabs": true,
+  "window.zoomLevel": -1,
   // Terminal Config
-  "terminal.integrated.shell.osx": "/bin/bash",
-  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontFamily": "SF Mono Square, Menlo",
   "terminal.integrated.scrollback": 9999,
   // --- Extension specific
+  // Git Lens
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
-  "git.autofetch": true,
+  // Vim extension settings
   "vim.useSystemClipboard": true,
+  "git.autofetch": true,
   "c-cpp-flylint.flexelint.enable": false,
+  "C_Cpp.updateChannel": "Insiders",
   "extensions.ignoreRecommendations": true,
   "workbench.editorAssociations": [
     {
       "viewType": "jupyter-notebook",
       "filenamePattern": "*.ipynb"
     }
-  ]
+  ],
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.startupEditor": "welcomePage",
 }

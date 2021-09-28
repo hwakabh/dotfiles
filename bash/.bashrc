@@ -4,6 +4,9 @@ export PS1="\[\e[0;36m\]\D{%Y/%m/%d_%H:%M:%S} \\W % \[\e[m\]"
 # Suppress zsh warnings
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+# Symbolic Link to iCloud Directories
+ln -s "$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs/" $HOME/iCloud
+
 # General alias
 alias l="ls -hGF"
 alias ll="ls -arlthGF"
@@ -11,9 +14,10 @@ alias ls='ls -tG'
 alias rm='rm -i'
 alias cls='clear'
 
-# include bash-completion files
-if [ -f "$(brew --prefix)/etc/bash_completion.d/" ]; then
-  source "$(brew --prefix)/etc/bash_completion.d/*"
+# bash-completion@2
+if (( $BASH_VERSINFO >= 5 )); then
+  export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+  [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 fi
 
 # gcloud-sdk
@@ -84,7 +88,8 @@ test -f $HEROKU_AC_BASH_SETUP_PATH && \
 source $HEROKU_AC_BASH_SETUP_PATH
 
 # Kubernetes
-if [ -f "$(brew --prefix)/etc/bash_completion.d/kubectl" ]; then
+if which kubectl > /dev/null; then
+  kubectl completion bash > $(brew --prefix)/etc/bash_completion.d/kubectl
   source $(brew --prefix)/etc/bash_completion.d/kubectl
 fi
 

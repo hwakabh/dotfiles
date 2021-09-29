@@ -5,7 +5,7 @@ export PS1="\[\e[0;36m\]\D{%Y/%m/%d_%H:%M:%S} \\W % \[\e[m\]"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Symbolic Link to iCloud Directories
-ln -s "$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs/" $HOME/iCloud
+ln -s $HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs/ $HOME/iCloud
 
 # General alias
 alias l="ls -hGF"

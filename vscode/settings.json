@@ -1,39 +1,53 @@
 {
+  "breadcrumbs.filePath": "off",
+  "breadcrumbs.symbolPath": "off",
+  "breadcrumbs.enabled": false,
   // Color scheme and navigations
+  "workbench.colorTheme": "Night Owl",
+  "workbench.startupEditor": "none",
   "workbench.sideBar.location": "left",
-  "workbench.colorTheme": "GitHub Light",
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.editor.showTabs": true,
+  "workbench.iconTheme": "vscode-icons",
   // Editor
-  "editor.fontFamily": "SF Mono Square, Menlo",
-  "editor.fontSize": 16,
-  "markdown.preview.fontFamily": "SF Mono Square, Menlo",
-  "markdown.preview.fontSize": 16,
+  "editor.fontFamily": "Menlo",
+  "editor.fontSize": 14,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.minimap.enabled": false,
+  "editor.cursorStyle": "line",
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
   "editor.fontLigatures": false,
-  "breadcrumbs.enabled": false,
-  "workbench.editor.showTabs": true,
-  "window.zoomLevel": -1,
+  "markdown.preview.fontFamily": "Menlo",
+  "markdown.preview.fontSize": 16,
   // Terminal Config
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.fontFamily": "SF Mono Square, Menlo",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "Menlo",
   "terminal.integrated.scrollback": 9999,
   // --- Extension specific
+  "git.path": "/opt/homebrew/bin/git",
+  "git.autofetch": true,
   // Git Lens
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
   // Vim extension settings
   "vim.useSystemClipboard": true,
-  "git.autofetch": true,
+  // Linters
   "c-cpp-flylint.flexelint.enable": false,
   "C_Cpp.updateChannel": "Insiders",
   "extensions.ignoreRecommendations": true,
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter-notebook",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
-  "workbench.iconTheme": "vscode-icons",
-  "workbench.startupEditor": "welcomePage",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "pasteImage.path": "${projectRoot}/_img",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "vsicons.dontShowNewVersionMessage": true,
+  "window.zoomLevel": -1,
 }

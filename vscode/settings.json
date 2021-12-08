@@ -21,8 +21,9 @@
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
   "editor.fontLigatures": false,
+  "markdown.preview.breaks": true,
   "markdown.preview.fontFamily": "Menlo",
-  "markdown.preview.fontSize": 16,
+  "markdown.preview.fontSize": 14,
   // Terminal Config
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontFamily": "Menlo",

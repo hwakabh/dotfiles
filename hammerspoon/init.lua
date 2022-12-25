@@ -1,4 +1,6 @@
 --- Install CLI: `hs` commands
+--- Note for `hs` installation, `hs.ipc.cliInstall()` requires `hs.ipc`
+--- <https://www.hammerspoon.org/docs/hs.ipc.html>
 require("hs.ipc")
 hs.ipc.cliInstall("/opt/homebrew")
 

@@ -18,6 +18,21 @@ fi
 
 # Git
 export PATH=$(brew --prefix)/bin/git:$PATH
+function branch-status-check() {
+    local branchname
+        # ignore since outside .git
+        if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
+            return
+        fi
+        branchname=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
+        if [[ -z $branchname ]]; then
+            return
+        fi
+        echo "[${branchname}]"
+}
+precmd() {
+    PROMPT="%D %* %2c `branch-status-check` %# "
+}
 alias g='git'
 alias gs='git status'
 alias ga='git add'

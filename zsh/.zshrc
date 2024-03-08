@@ -32,6 +32,11 @@ function branch-status-check() {
 }
 precmd() {
     PROMPT="%D %* %2c `branch-status-check` %# "
+    if [ -n "$VIRTUAL_ENV" ]; then
+        PYTHON_VIRTUAL_ENV_STRING="`basename \"$VIRTUAL_ENV\"`"
+        PYTHON_VERSION_CTX=$(pyenv version-name)
+        PROMPT="(Python:$PYTHON_VERSION_CTX $PYTHON_VIRTUAL_ENV_STRING) %D %* %2c `branch-status-check` %# "
+    fi
 }
 alias g='git'
 alias gs='git status'

@@ -2,6 +2,7 @@
 --- Note for `hs` installation, `hs.ipc.cliInstall()` requires `hs.ipc`
 --- <https://www.hammerspoon.org/docs/hs.ipc.html>
 require("hs.ipc")
+--- ref: <https://github.com/Hammerspoon/hammerspoon/issues/3550>
 hs.ipc.cliInstall("/opt/homebrew")
 
 --- Switcher for all windows

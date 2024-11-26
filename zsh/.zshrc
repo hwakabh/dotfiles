@@ -5,6 +5,8 @@ alias ls='ls -tG'
 alias rm='rm -i'
 alias cls='clear'
 
+bindkey "^U" backward-kill-line
+
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 

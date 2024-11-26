@@ -4,6 +4,27 @@
 require("hs.ipc")
 hs.ipc.cliInstall("/opt/homebrew")
 
+--- Switcher for all windows
+switcher = hs.window.switcher.new(hs.window.filter.new():setCurrentSpace(true))
+switcher.ui.showTitles = true
+switcher.ui.textSize = 12
+switcher.ui.showSelectedThumbnail = false
+switcher.ui.thumbnailSize = 128
+
+function mapCmdTab(event)
+    local flags = event:getFlags()
+    local chars = event:getCharacters()
+    if chars == "\t" and flags:containExactly{'cmd'} then
+        switcher:next()
+        return true
+    elseif chars == string.char(25) and flags:containExactly{'cmd','shift'} then
+        switcher:previous()
+        return true
+    end
+end
+tapCmdTab = hs.eventtap.new({hs.eventtap.event.types.keyDown}, mapCmdTab)
+tapCmdTab:start()
+
 
 --- Define functions for change keybindings
 local function keyCode(key, modifiers)

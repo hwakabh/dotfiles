@@ -7,6 +7,7 @@
 [core]
 	editor = vim
 	quotepath = false
+	core.ignorecase = false
 [alias]
 	graph = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
 	stale = ! git branch --merged main | grep -v '^[ *]*main$' | xargs git branch -d

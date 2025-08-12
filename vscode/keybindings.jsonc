@@ -2,18 +2,18 @@
 // $HOME/Library/Application\ Support/Code/User/keybindings.json
 [
   {
-      "key": "cmd+;",
-      "command": "workbench.action.terminal.focus",
-      "when": "editorTextFocus"
+    "key": "cmd+;",
+    "command": "workbench.action.terminal.focus",
+    "when": "editorTextFocus"
   },
   {
-      "key": "cmd+;",
-      "command": "workbench.action.focusFirstEditorGroup",
-      "when": "terminalFocus"
+    "key": "cmd+;",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "terminalFocus"
   },
   {
-      "key": "cmd+r",
-      "command": "editor.action.startFindReplaceAction"
+    "key": "cmd+r",
+    "command": "editor.action.startFindReplaceAction"
   },
   {
     "key": "shift+cmd+g",
@@ -24,5 +24,23 @@
     "key": "shift+cmd+k",
     "command": "list.collapseAll",
     "when": "listFocus && !inputFocus"
-  }
+  },
+  {
+    "key": "ctrl+shift+;",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "cmd+[",
+    "command": "editor.action.insertSnippet",
+    "args": {
+      "snippet": "[[${TM_SELECTED_TEXT}]]"
+    },
+    "when": "editorTextFocus"
+	}
 ]

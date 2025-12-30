@@ -1,7 +1,7 @@
 # General alias
-alias l="ls -hGF"
-alias ll="ls -altrhGF"
-alias ls='ls -tG'
+alias l="ls -hGF --color=auto"
+alias ll="ls -altrhGF --color=auto"
+alias ls='ls -tG --color=auto'
 alias rm='rm -i'
 alias cls='clear'
 

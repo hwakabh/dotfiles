@@ -10,9 +10,9 @@ if [ -f $HOME/iCloud/com~apple~CloudDocs ]; then
 fi
 
 # General alias
-alias l="ls -hGF"
-alias ll="ls -arlthGF"
-alias ls='ls -tG'
+alias l="ls -hGF --color=auto"
+alias ll="ls -arlthGF --color=auto"
+alias ls='ls -tG --color=auto'
 alias rm='rm -i'
 alias cls='clear'
 
@@ -36,7 +36,7 @@ if [ -f "$(brew --prefix)/etc/bash_completion.d/az" ]; then
 fi
 
 # aws-cli
-if [ -f "$(brew --prefix)/bin/aws_completer" ]; then 
+if [ -f "$(brew --prefix)/bin/aws_completer" ]; then
   complete -C "$(brew --prefix)/bin/aws_completer" aws
 fi
 

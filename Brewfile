@@ -1,24 +1,18 @@
-tap "hashicorp/tap"
-brew "gh"
 brew "go"
-brew "ipmitool"
-brew "mas"
+# brew "mas"
 brew "nodebrew"
 brew "pyenv"
 brew "wget"
 brew "zsh-completions"
-cask "firefox"
 cask "hammerspoon"
-cask "hashicorp-vagrant"
-cask "virtualbox"
 cask "visual-studio-code"
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "LINE", id: 539883307
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Slack", id: 803453959
+# mas "GarageBand", id: 682658836
+# mas "iMovie", id: 408981434
+# mas "Keynote", id: 409183694
+# mas "LINE", id: 539883307
+# mas "Numbers", id: 409203825
+# mas "Pages", id: 409201541
+# mas "Slack", id: 803453959
 vscode "3w36zj6.textlint"
 vscode "bazelbuild.vscode-bazel"
 vscode "bierner.markdown-mermaid"

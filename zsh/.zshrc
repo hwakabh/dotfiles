@@ -1,45 +1,11 @@
-# General alias
-alias l="ls -hGF --color=auto"
-alias ll="ls -altrhGF --color=auto"
-alias ls='ls -tG --color=auto'
+# general aliases
+alias l="ls -hGF"
+alias ll="ls -altrhGF"
+alias ls='ls -tG'
 alias rm='rm -i'
 alias cls='clear'
 
-bindkey "^U" backward-kill-line
-
-# Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# zsh-completion
-chmod -R go-w '/opt/homebrew/share/'
-if type brew &> /dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-  autoload -Uz compinit
-  compinit
-fi
-
 # Git
-export PATH=$(brew --prefix)/bin/git:$PATH
-function branch-status-check() {
-    local branchname
-        # ignore since outside .git
-        if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
-            return
-        fi
-        branchname=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
-        if [[ -z $branchname ]]; then
-            return
-        fi
-        echo "[${branchname}]"
-}
-precmd() {
-    PROMPT="%D %* %2c `branch-status-check` %# "
-    if [ -n "$VIRTUAL_ENV" ]; then
-        PYTHON_VIRTUAL_ENV_STRING="`basename \"$VIRTUAL_ENV\"`"
-        PYTHON_VERSION_CTX=$(pyenv version-name)
-        PROMPT="(Python:$PYTHON_VERSION_CTX $PYTHON_VIRTUAL_ENV_STRING) %D %* %2c `branch-status-check` %# "
-    fi
-}
 alias g='git'
 alias gs='git status'
 alias ga='git add'
@@ -50,39 +16,40 @@ alias gr='git remote -v'
 alias gg='git graph'
 alias gf='git fetch --all --prune'
 
-# VSCode
-export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
-# PowerShell
-alias powershell='pwsh'
+function branch-status-check() {
+    [[ "$PWD" == *"/.git"* ]] && return
+    local branchname=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+    [[ -n $branchname ]] && echo "[${branchname}]"
+}
 
-# Python
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+precmd() {
+    PROMPT="%D %* %2c $(branch-status-check) %# "
+}
 
-# nodebrew
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
+# zsh bash-like keybindings
+bindkey "^u" backward-kill-line
 
-# golang
-export GOPATH=$(go env GOPATH)
+# completions (with using caching)
+autoload -Uz compinit
+compinit -C
 
-# aws-cli
-autoload bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-complete -C '/usr/local/bin/aws_completer' aws
+autoload -Uz bashcompinit && bashcompinit
 
-# google-cloud-sdk
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
-  source "$HOME/google-cloud-sdk/path.zsh.inc";
+#complete -o nospace -C /usr/local/bin/terraform terraform
+#complete -o nospace -C /usr/local/bin/vault vault
+#fpath=(/opt/homebrew/share/zsh-completions /opt/vagrant/embedded/gems/gems/vagrant-2.4.7/contrib/zsh $fpath)
+#[ -f "$HOME/google-cloud-sdk/path.zsh.inc" ] && source "$HOME/google-cloud-sdk/path.zsh.inc"
+#[ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ] && source "$HOME/google-cloud-sdk/completion.zsh.inc"
+
+# activate pyenv
+if command -v pyenv > /dev/null; then
+  eval "$(pyenv init -)"
 fi
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
-  source "$HOME/google-cloud-sdk/completion.zsh.inc";
+
+# Kubernetes
+if command -v kubectl > /dev/null; then
+   source <(kubectl completion zsh)
 fi
-
-# k8s
-alias k='kubectl'
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
-# mysql-client
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-
+if command -v kind > /dev/null; then
+   source <(kind completion zsh)
+fi

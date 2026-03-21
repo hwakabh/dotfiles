@@ -34,12 +34,7 @@ autoload -Uz compinit
 compinit -C
 
 autoload -Uz bashcompinit && bashcompinit
-
-#complete -o nospace -C /usr/local/bin/terraform terraform
-#complete -o nospace -C /usr/local/bin/vault vault
-#fpath=(/opt/homebrew/share/zsh-completions /opt/vagrant/embedded/gems/gems/vagrant-2.4.7/contrib/zsh $fpath)
-#[ -f "$HOME/google-cloud-sdk/path.zsh.inc" ] && source "$HOME/google-cloud-sdk/path.zsh.inc"
-#[ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ] && source "$HOME/google-cloud-sdk/completion.zsh.inc"
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 
 # activate pyenv
 if command -v pyenv > /dev/null; then
@@ -58,3 +53,13 @@ fi
 if command -v kind > /dev/null; then
    source <(kind completion zsh)
 fi
+
+## HashiCorp
+#complete -o nospace -C /usr/local/bin/terraform terraform
+#complete -o nospace -C /usr/local/bin/vault vault
+#fpath=(/opt/vagrant/embedded/gems/gems/vagrant-2.4.7/contrib/zsh $fpath)
+
+## Google Cloud
+#[ -f "$HOME/google-cloud-sdk/path.zsh.inc" ] && source "$HOME/google-cloud-sdk/path.zsh.inc"
+#[ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ] && source "$HOME/google-cloud-sdk/completion.zsh.inc"
+

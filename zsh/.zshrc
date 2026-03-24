@@ -46,13 +46,8 @@ if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
-# Kubernetes
-if command -v kubectl > /dev/null; then
-   source <(kubectl completion zsh)
-fi
-if command -v kind > /dev/null; then
-   source <(kind completion zsh)
-fi
+# Kubernetes (kubectl/kind)
+fpath=(~/.zsh/completion $fpath)
 
 ## HashiCorp
 #complete -o nospace -C /usr/local/bin/terraform terraform
